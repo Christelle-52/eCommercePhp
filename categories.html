@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <!-- Font Awesome : synth ex linkedin : [<a href=”mon lien linkedin” target=”_blank”> <i class="bi bi-linkedin"></i></a>] -->
+  <link rel="stylesheet" href="icons/awesome/css/all.min.css" />
+  <!-- Fonts Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Klee+One:wght@400;600&family=Lato:wght@300&family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,700;1,800;1,900&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sriracha&display=swap"
+    rel="stylesheet">
+
+  <link href="styles/style.css" rel="stylesheet">
+  <link href="styles/body.css" rel="stylesheet">
+  <link href="styles/header.css" rel="stylesheet">
+  <link href="styles/footer.css" rel="stylesheet">
+  <link href="styles/mediaQuerie.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/connexion.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/article.css">
+  <link rel="stylesheet" href="styles/panier.css">
+  <link rel="stylesheet" href="styles/paiement.css">
+  <link rel="stylesheet" href="styles/profil.css">
+  <link rel="stylesheet" href="styles/categories.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+  <title>ZenDog</title>
+
+</head>
+
+<body>
+  <header>
+    <!-- nav de haut de page -->
+    <nav class=" container-fluid navHeader">
+      <a class="linkButton" href="connexion.html">
+        <div class="navHeaderItem">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17.5" height="17.5" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+              <path d="M12 20a8 8 0 1 0 0-16" />
+              <path stroke-linejoin="round" d="M4 12h10m0 0l-3-3m3 3l-3 3" />
+            </g>
+          </svg>
+          <span>Connexion</span>
+        </div>
+      </a>
+      <a class="linkButton" href="contact.html">
+        <div class="navHeaderItem">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-6.54 4.09c-.65.41-1.47.41-2.12 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44z" />
+          </svg>
+          <span>Contactez-nous</span>
+        </div>
+      </a>
+      <a class="linkButton" href="panier.html">
+        <div class="navHeaderItem">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 256 256">
+            <path fill="currentColor"
+              d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+          </svg>
+          <span>Panier</span>
+        </div>
+      </a>
+    </nav>
+
+    <!-- bannière + promesse + logo + CTA + searchBar-->
+    <section class="container-fluid header">
+      <div class="container-fluid banTop d-flex justify-content-between">
+        <a href="index.html"><img class="logo" src="logo/logo small.png" alt="logo"></a>
+        <h1 class="promesse">La vie est belle à travers le regard d’un chien.<br>
+          Laissez-nous le combler avec nos produits de qualité.</h1>
+      </div>
+      <!-- CTA + searchBar -->
+      <div class="container-fluid banLink justify-content-center">
+        <div class="row justify-content-between w-100 gy-2 mx-1">
+          <!-- searchBar -->
+          <div class="col-lg-6 col-md-8 search d-flex">
+            <input class="form-control" type="search" placeholder="Recherche" aria-label="Search">
+            <button class="searchSubmit" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 512 512">
+                <path fill="#85147a"
+                  d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352a144 144 0 1 0 0-288a144 144 0 1 0 0 288z" />
+              </svg>
+            </button>
+          </div>
+          <!-- CTA -->
+          <a class="col-lg-2 col-md-3 cta py-0" href="inscription.html" role="button">
+            Rejoignez-nous
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nav des catégories -->
+    <section class="container-fluid navMenuItem w-100">
+      <div class="container navbar navbar-expand-lg ">
+        <!-- toggler button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+          <!-- Catégories -->
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Friandises
+            </button>
+            <ul class="dropdown-menu py-0">
+              <li><a class="dropdown-item" href="categories.html">Poulet</a></li>
+              <li><a class="dropdown-item" href="categories.html">Boeuf / Agneau</a></li>
+              <li><a class="dropdown-item" href="categories.html">Porc</a></li>
+              <li><a class="dropdown-item" href="categories.html">Poisson</a></li>
+              <li><a class="dropdown-item" href="categories.html">Autres</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Jouets
+            </button>
+            <ul class="dropdown-menu py-0">
+              <li><a class="dropdown-item" href="#">A lancer</a></li>
+              <li><a class="dropdown-item" href="#">A tirer</a></li>
+              <li><a class="dropdown-item" href="#">D'intelligence</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dodos
+            </button>
+            <ul class="dropdown-menu py-0">
+              <li><a class="dropdown-item" href="#">Coussins</a></li>
+              <li><a class="dropdown-item" href="#">Paniers</a></li>
+              <li><a class="dropdown-item" href="#">Tapis</a></li>
+              <li><a class="dropdown-item" href="#">Niches</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Vie quotidienne
+            </button>
+            <ul class="dropdown-menu py-0">
+              <li><a class="dropdown-item" href="#">Gamelles</a></li>
+              <li><a class="dropdown-item" href="#">Colliers - Laisses</a></li>
+              <li><a class="dropdown-item" href="#">Transport</a></li>
+              <li><a class="dropdown-item" href="#">Hygiène</a></li>
+              <li><a class="dropdown-item" href="#">Compléments</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sports
+            </button>
+            <ul class="dropdown-menu py-0">
+              <li><a class="dropdown-item" href="#">Hoopers</a></li>
+              <li><a class="dropdown-item" href="#">Agility</a></li>
+              <li><a class="dropdown-item" href="#">Canicross</a></li>
+              <li><a class="dropdown-item" href="#">Obédience</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              A propos de nous
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main>
+
+    <section class="container my-4">
+      <h2 class="p-0 text-center pb-3">Friandises naturelles à la volaille</h2>
+      <p class="my-4 fs-4 px-4">&nbsp;&nbsp;&nbsp;&nbsp;Les friandises à la volaille sont particulièrement adaptées aux chiens sensibles ou sujets aux
+        allergies alimentaires et se présentent sous des formes très variées : gésiers de poulet, cous de dinde, blancs
+        de poulets séchés, bouchées... </p>
+      <!-- <div class="div"> -->
+      <div class="card p-0 my-3 w-100 h-auto">
+        <div class="row g-0 p-0 pt-3">
+          <div class="col-md-3 p-2 text-center">
+            <img src="articles/categories/poulet/chings_30x30_9.jpg" class="rounded-start w-50"
+              alt="...">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title p-0">Rocco Chings Steak Style pour chien</h5>
+              <p class="card-text">Votre chien aime les steaks ? Ces friandises vont lui plaire ! Délicieuses
+                friandises à base de viande de poulet ou de canard délicatement marbrée, conviennent aussi pour les
+                chiens allergiques.</p>
+              <div class="d-flex align-items-center">
+                <p>Livraison estimée : 2-4 jours ouvrés.</p>
+                <a href="article.html" class="px-3  ctaSmall">Lire la suite</a>
+              </div>
+              <div class="sousCat">
+
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">poulet (200g)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">5,49 €</p>
+                    <small class="text-secondary p-0 m-0">27,45 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">canard (200g)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">5,49 €</p>
+                    <small class="text-secondary p-0 m-0">27,45 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 w-100 h-auto produit">
+        <div class="row g-0 p-0 pt-3">
+          <div class="col-md-3 p-2 text-center">
+            <img src="articles/categories/poulet/pla_rocco_chingsdouble_chicken_1000x1000_3.jpg"
+              class="rounded-start w-50" alt="...">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title p-0">Rocco Chings Double pour chien</h5>
+              <p class="card-text">Les Rocco Chings Double sont enfin de retour ! Une double dose de viande pour deux
+                fois plus de plaisir ! Cœur au poulet, à l'agneau ou au bœuf enrobé de filets de poulet. Un plaisir
+                irrésistible !</p>
+              <div class="d-flex align-items-center">
+                <p>Livraison estimée : 2-4 jours ouvrés.</p>
+                <a href="article.html" class="px-3  ctaSmall">Lire la suite</a>
+              </div>
+              <div class="sousCat">
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">poulet, agneau (200g)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">5,49 €</p>
+                    <small class="text-secondary p-0 m-0">27,45 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">poulet, foie (200g)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">5,49 €</p>
+                    <small class="text-secondary p-0 m-0">27,45 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">poulet, boeuf (200g)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">5,49 €</p>
+                    <small class="text-secondary p-0 m-0">27,45 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 w-100 h-auto produit">
+        <div class="row g-0 p-0 pt-3">
+          <div class="col-md-3 p-2 text-center">
+            <img src="articles/categories/poulet/8in1_tasties_huehnerbrust_85g_hs_01_2.jpg"
+              class="rounded-start w-50" alt="...">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title p-0">8 in 1 Tasties Poitrine de poulet pour chien</h5>
+              <p class="card-text">Friandises pauvres en matières grasses pour chien, riches en poitrine de poulet, sans
+                gluten, idéales comme en-cas ou récompense, riches en protéines et sans additifs, digestes, cuites au
+                four</p>
+              <div class="d-flex align-items-center">
+                <p>Livraison estimée : 2-4 jours ouvrés.</p>
+                <a href="article.html" class="px-3  ctaSmall">Lire la suite</a>
+              </div>
+              <div class="sousCat">
+
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">85 g</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">3,49 €</p>
+                    <small class="text-secondary">41,06 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">3 x 85 g</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <small class="my-0 text-secondary">A l'unité 10,47 €</small>
+                    <p class="bodyBold text-danger p-0 m-0">Par lot 9,79 €</p>
+                    <small class="text-secondary">38,39 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">6 x 85 g</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <small class="my-0 text-secondary">A l'unité 20,94 €</small>
+                    <p class="bodyBold text-danger p-0 m-0">Par lot 18,79 €</p>
+                    <small class="text-secondary">36,84 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3 w-100 h-auto produit">
+        <div class="row g-0 p-0 pt-3">
+          <div class="col-md-3 p-2 text-center">
+            <img src="articles/categories/poulet/braaaf_roll_sticks_with_chicken_12_5cm_hs_01_7.jpg"
+              class="rounded-start w-50" alt="...">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title p-0">Braaaf Bâtonnets torsadés à mâcher, poulet pour chien</h5>
+              <p class="card-text">Bâtonnets à mâcher pour chien sans céréales, parfaits pour satisfaire l'instinct
+                naturel de mastication, favorisent le nettoyage des dents et des gencives, naturels, sans arômes ni
+                parfums.</p>
+              <div class="d-flex align-items-center">
+                <p>Livraison estimée : 2-4 jours ouvrés.</p>
+                <a href="article.html" class="px-3  ctaSmall">Lire la suite</a>
+              </div>
+              <div class="sousCat">
+
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">12.5 cm (30 bâtonnets)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <p class="bodyBold p-0 m-0">14,99 €</p>
+                    <small class="text-secondary">53,54 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row py-3 m-0">
+                  <div class="col-6">
+                    <small class="ps-4">2 x 12.5 cm (30 bâtonnets)</small>
+                  </div>
+                  <div class="col-2 text-end p-0 m-0">
+                    <small class="my-0 text-secondary">A l'unité 29,98 €</small>
+                    <p class="bodyBold text-danger p-0 m-0">Par lot 26,46 €</p>
+                    <small class="text-secondary">47,30 €/kg</small>
+                  </div>
+                  <div class="col-4 d-flex align-items-center qty">
+                    <div class="input-group ">
+                      <i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins mx-3"></i>
+                      <input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
+                        aria-label="Quantité">
+                      <i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus mx-3"></i>
+                      <a href="#" class="mx-3 addCard2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                          viewBox="0 0 256 256">
+                          <path
+                            d="M222.14 58.87A8 8 0 0 0 216 56H54.68l-4.89-26.86A16 16 0 0 0 34.05 16H16a8 8 0 0 0 0 16h18l25.56 140.29a24 24 0 0 0 5.33 11.27a28 28 0 1 0 44.4 8.44h45.42a27.75 27.75 0 0 0-2.71 12a28 28 0 1 0 28-28H83.17a8 8 0 0 1-7.87-6.57L72.13 152h116a24 24 0 0 0 23.61-19.71l12.16-66.86a8 8 0 0 0-1.76-6.56ZM180 192a12 12 0 1 1-12 12a12 12 0 0 1 12-12Zm-96 0a12 12 0 1 1-12 12a12 12 0 0 1 12-12Z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="container-fluid footerContainer p-0 m-0">
+    <div class="container-fluid newsletter justify-content-center newsletter">
+      <h2 id="bottom">Newsletter</h2>
+      <form action="merciNews.html">
+        <div class="row justify-content-between w-75 gy-2 mx-auto">
+          <div class="col-xl-6 col-md-12 mail d-flex">
+            <input class="form-control py-2" type="email" id="newsletter" name="newsletter"
+              placeholder="Votre adresse mail" aria-label="email" required="">
+          </div>
+          <!-- CTA -->
+          <input type="submit" value="Je m'inscris" class="col-xl-2 col-md-3 cta py-0">
+        </div>
+      </form>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row containerFooterItems justify-content-center m-auto gx-5 my-3">
+        <div class="col-lg-3 col-sm-6 col-12 footerItem">
+          <h4>Services</h4>
+          <a href="connexion.html">Mon compte</a>
+          <a href="contact.html">FAQ & Contact</a>
+          <a href="CGV.html">Conditions générales de vente</a>
+          <a href="shipping.html">Frais de livraison</a>
+          <a href="politiqConf.html">Politique de confidentialité</a>
+
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 footerItem">
+          <h4>Acheter malin</h4>
+          <a href="#">Offres spéciales</a>
+          <a href="#">Offres du moment</a>
+          <a href="#">Destockage</a>
+          <a href="#">Points fidélité</a>
+
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 footerItem">
+          <h4>Où nous trouver</h4>
+          <a href="coordonnees.html" class="coordonnees">
+            <div class="address">
+              <p>46, rue du Code</p>
+              <p>57190 FLORANGE</p>
+              <p class="bodyBold">06.57.69.29.40</p>
+              <p class="bodyBold">projet@afpa.com</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 footerItem mx-auto">
+          <h4>Suivez nous</h4>
+          <div class="icons w-100">
+            <a href="#"><img src="icons/facebook.svg" width="50px" height="50px" alt="facebook"></a>
+            <a href="#"><img src="icons/instagram.svg" width="50px" height="50px" alt="instagram"></a>
+            <a href="#"><img src="icons/twitter.svg" width="50px" height="50px" alt="twitter"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row footerIcon">
+        <div class="col-md-6 col-12 ">
+          <h3>Moyens de paiement</h3>
+          <div class="cardIcon">
+            <img src="icons/visa.svg" alt="carte visa" width="133px" height="44px">
+            <img src="icons/cb.svg" alt="carte bleue" width="87px" height="48px">
+            <img src="icons/mastercard.svg" alt="carte mastercard" width="71px" height="55px">
+            <img src="icons/american-express.svg" alt="carte american express" width="80px" height="53px">
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <h3>Livraison</h3>
+          <div class="shipIcon">
+            <img src="icons/chronopost.svg" alt="chronopost">
+            <img src="icons/mondial-relay.svg" alt="mondial-relay">
+            <img src="icons/gls.svg" alt="gls">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright <span><img src="icons/copyright.svg" alt="copyright" width="24px" height="24px"></span> 2023</p>
+    </div>
+  </footer>
+
+
+  <!-- script js bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
+  <!-- script popper et bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <!-- script js -->
+  <!-- <script src="script/script.js" type="text/javascript"></script> -->
+  <!-- <script src="script/eye.js" type="text/javascript"></script> -->
+  <!-- <script src="script/formulaire.js" type="text/javascript"></script> -->
+  <script src="script/plusMoins.js" type="text/javascript"></script>
+</body>
+
+</html>

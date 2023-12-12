@@ -1,0 +1,36 @@
+.paiement {
+  border: solid 1px var(--secondary-color);
+  border-radius: 15px;
+}
+
+.resume :not(h3) {
+  padding: 0 25px;
+}
+
+.article small {
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  border-bottom: solid 0.5px var(--secondary-color);
+}
+
+.article small p {
+  padding: 10px 0;
+}
+
+.total, .ship {
+  display: flex;
+  justify-content: space-between;
+margin: 20px 0;
+align-items: center;
+padding: 10px 25px;
+}
+
+.article {
+  margin: 10px ;
+}
+
+h3 {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}

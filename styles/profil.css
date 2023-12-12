@@ -1,0 +1,57 @@
+.profil {
+  background-image: url(../images/profil.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  width: 100%;
+  padding-bottom: 2%;
+}
+
+.profil table {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.commandes table tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr;
+}
+
+.contact :not(h4) {
+  width: 35%;
+  background-color: var(--primary-color);
+  color: white;
+  opacity: 0.8;
+
+}
+
+.factures {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  padding: 10px 0;
+}
+
+.factures a {
+  text-decoration: none;
+  color: white;
+}
+
+.factures a:hover {
+  color: var(--cta-hover-bgcolor);
+}
+
+.pts tr :nth-child(odd) {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.ptsMoins {
+  background-color: var(--primary-color);
+  color: white;
+  opacity: 0.8;
+}

@@ -1,0 +1,177 @@
+.carousel-control-prev {
+	opacity: 0.8;
+	left: -100px;
+	animation-timing-function: linear;
+	animation: movePrev 5s infinite;
+}
+
+.carousel-control-prev .carousel-control {
+	position: relative;
+	top: -54%;
+	left: 30%;
+}
+
+.carousel-control-next .carousel-control {
+	position: relative;
+	top: -54%;
+	right: 30%;
+}
+
+.carousel-control-next {
+	opacity: 0.8;
+	right: -100px;
+	animation-timing-function: linear;
+	animation: moveNext 5s infinite;
+}
+
+@keyframes moveNext {
+	from {
+		right: -20px;
+	}
+	to {
+		right: -60px;
+	}
+}
+
+@keyframes movePrev {
+	from {
+		left: -20px;
+	}
+	to {
+		left: -60px;
+	}
+}
+
+#carouselHeader {
+	margin: 4% 0 !important;
+}
+
+.slider {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	margin: auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	margin-bottom: 45px
+}
+
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider .slide {
+	display: flex;
+	position: absolute;
+	left: 0;
+	transition: 0.3s left ease-in-out;
+}
+
+/* .slider .item {
+	margin-left: 20px;
+} */
+
+/* .item{
+	width:381px
+} */
+/* .slider .item:last-child {
+	margin-right: 25px;
+} */
+
+.ctrl {
+	text-align: center;
+	margin-top: 5px;
+}
+
+ .ctrl-btn {
+	float: right
+}
+
+.slide .card {
+	text-align: center;
+}
+
+.newProducts .ctrl {
+	text-align: center;
+	margin-top: 5px;
+}
+
+.newProducts .ctrl-btn {
+	float: right
+}
+
+
+.slide .card img {
+	margin: 10px 20px;
+}
+
+.card {
+	background-color: #F5F5F5;
+	border: solid 1px var(--secondary-color);
+	width: fit-content;
+	margin: 0 10px;
+	/* height: 400px; */
+}
+
+.gridCard {
+	margin-top: 40px;
+margin-bottom: 10px;
+}
+
+.gridCard .card {
+	background-color: #F5F5F5;
+	border: solid 1px var(--secondary-color);
+	height: auto;
+}
+
+.avatar {
+	margin: 0 10px;
+	/* width: 50%; */
+}
+
+.gridCard .card-body {
+	padding:5px 0;
+}
+
+/* .gridCard .card-tittle {
+	margin: 5px 0;
+} */
+
+#plusCommit {
+	text-decoration: none;
+	color: var(--secondary-color);
+	font-size: 24px;
+	text-align: center;
+	display: block;
+	font-weight: 600;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+#plusCommit:hover{
+	color: var(--cta-hover-bgcolor);
+}
+
+.linkButtonProduct {
+	background-color: var(--cta-bg-color);
+	border: solid 2px var(--secondary-color);
+	border-radius: 35px;
+	color: #F5F5F5;
+	text-align: center;
+	text-decoration: none;
+	width: fit-content;
+	padding: 8px 0;
+	margin-bottom: 40px;
+}
+
+#descriptProduct {
+	color: var(--secondary-color);
+	text-decoration: none;
+	padding: 7px 0;
+	font-style: italic;
+	text-align: center;
+}
+
+#descriptProduct:hover {
+	color: var(--cta-hover-bgcolor);
+}

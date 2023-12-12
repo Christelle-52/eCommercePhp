@@ -1,0 +1,55 @@
+.textCard span {
+  font-size: 16px;
+  text-align: center;
+}
+
+article .product img {
+  box-sizing: border-box;
+}
+
+.product {
+  border-bottom: solid 1px rgba(151,71,255,0.3);
+}
+
+article {
+  border-radius: 7px;
+  height: fit-content;
+  border: solid 1px rgba(151,71,255,0.3);
+}
+
+article .product:last-child {
+  border: none;
+}
+
+.qty :hover {
+  color: var(--cta-hover-bgcolor);
+}
+
+.selectSizeQty svg{
+  display: inline-block;
+  width: 100%;
+  stroke: var(--secondary-color);
+}
+.selectSizeQty svg :hover{
+  display: inline-block;
+  width: 100%;
+  stroke: var(--cta-hover-bgcolor);
+
+}
+
+.codeReduce {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 15px;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.codeReduce:hover {
+  color: var(--cta-hover-bgcolor);
+}
+
+.offerShipping {
+  padding: 0  0  0 10px;
+}
+

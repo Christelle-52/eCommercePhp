@@ -1,0 +1,145 @@
+@media screen and (max-width:850px) {
+	h1 {
+		display: none !important;
+	}
+
+	.inscription {
+		background-image: url(images/inscription1.png);
+		display: flex;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.champsForm {
+		padding-top: 60px;
+	}
+
+	.navHeaderItem {
+		padding: 0;
+		margin: 5px;
+	}
+
+	.navHeader {
+		padding: 5px;
+	}
+
+	.product img {
+		display: none;
+	}
+
+	.valueProduct {
+		font-size: 24px !important;
+	}
+
+	.merciNews em {
+		display: block;
+		font-size: 50px !important;
+		font-weight: 900;
+		padding: 5% 5% 40% 5%;
+		text-align: center;
+
+	}
+
+	.merciNews p {
+		font-size: 30px !important;
+		font-weight: 900;
+		padding: 10% 5% 5% 5%;
+		text-align: center;
+
+	}
+}
+
+@media screen and (max-width: 992px) {
+	h1 {
+		font-family: 'Nunito Sans', sans-serif;
+		font-size: 30px !important;
+		font-weight: 700;
+		text-shadow: 2px 0 #1f1f1f, -2px 0 #1f1f1f, 0 2px #1f1f1f, 0 -2px #1f1f1f,
+			1px 1px #1f1f1f, -1px -1px #1f1f1f, 1px -1px #1f1f1f, -1px 1px #1f1f1f;
+		text-align: center;
+	}
+
+	.navHeaderItem span {
+		display: none;
+	}
+
+	.navHeaderItem svg {
+		height: 34px;
+		width: 34px;
+	}
+
+	.promesse {
+		height: fit-content;
+	}
+
+	.search {
+		position: relative;
+		top: -80px;
+	}
+
+	.logo {
+		position: relative;
+		bottom: 40px;
+		left: 3%;
+		height: fit-content;
+	}
+
+	.dropdown-menu {
+		position: relative;
+		left: 200px;
+		top: -50px;
+		width: fit-content;
+	}
+
+	.create {
+		font-size: 16px;
+	}
+
+	.icons {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.cart {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.resume {
+		display: none;
+	}
+
+	.fa-2xl {
+		font-size: 1em;
+	}
+
+	.product a {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+
+	.groupe2,
+	.groupe3 {
+		display: none;
+	}
+
+	.contactUs label {
+		flex-direction: column;
+	}
+}
+
+
+@media screen and (max-width: 1469px) {
+	h1 {
+		font-family: 'Nunito Sans', sans-serif;
+		font-size: 36px;
+		font-weight: 700;
+		text-shadow: 2px 0 #1f1f1f, -2px 0 #1f1f1f, 0 2px #1f1f1f, 0 -2px #1f1f1f,
+			1px 1px #1f1f1f, -1px -1px #1f1f1f, 1px -1px #1f1f1f, -1px 1px #1f1f1f;
+		text-align: center;
+	}
+
+}

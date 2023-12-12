@@ -1,0 +1,88 @@
+.inscription .form-control,
+.connexion .form-control {
+  border: solid 2px var(--secondary-color);
+}
+
+
+.inscription {
+  background-image: url(../images/inscription1.png);
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: space-between;
+  border: solid 2px var(--secondary-color);
+  margin: 40px auto;
+}
+
+/* .formulaire {
+  margin: 60px 0;
+} */
+
+.formulaire .form-control::placeholder {
+  font-size: 18px;
+  color: var(--secondary-color);
+  opacity: 0.6;
+  background-color: #F5F5F5;
+}
+
+.formulaire .form-label {
+  font-size: 24px;
+  font-weight: 700;
+  color: #F5F5F5;
+  padding-top: 25px;
+  text-shadow: 2px 0 var(--secondary-color), -2px 0 var(--secondary-color), 0 2px var(--secondary-color), 0 -2px var(--secondary-color),
+    1px 1px var(--secondary-color), -1px -1px var(--secondary-color), 1px -1px var(--secondary-color), -1px 1px var(--secondary-color);
+}
+
+.formulaire .form-control {
+  box-shadow: none;
+  padding-left: 10px;
+}
+
+.champsForm input:focus {
+  border: solid 2px var(--cta-hover-bgcolor);
+}
+
+.champsForm .cta {
+  margin: 30px auto;
+}
+
+.mdp {
+  position: relative;
+}
+
+.mdp input:focus {
+  border: solid 2px var(--cta-hover-bgcolor);
+}
+
+.mdp .password-icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  display: flex;
+  color: var(--secondary-color);
+  align-items: center;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+  width: 40px;
+}
+
+.password-icon :hover {
+  cursor: pointer;
+  color: var(--cta-hover-bgcolor);
+}
+
+.mdp .password-icon .fa-eye-slash {
+  display: none;
+}
+
+.message .erreur {
+  color: red;
+  box-shadow: 11px 11px 8px -1px rgba(255, 6, 30, 0.86);
+}
+
+.message .valide {
+  color: rgb(4, 45, 4);
+  box-shadow: 11px 11px 8px -1px rgba(4, 45, 4, 0.86);
+}

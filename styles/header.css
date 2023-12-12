@@ -1,0 +1,140 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+.navHeader {
+	text-align: right;
+	border-bottom: solid 2px var(--secondary-color);
+	padding: 5px 40px 7px 5px;
+}
+
+.navHeaderItem {
+	display: inline;
+	margin: 0 20px;
+	padding: 5px;
+}
+
+.linkButton {
+	font-weight: 600;
+	font-style: italic;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+.navHeader a :hover {
+	font-weight: 600;
+	font-style: italic;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	color: var(--cta-hover-bgcolor);
+}
+
+.header {
+	background-image: url(../images/ban.png);
+	height: 326px;
+	display: flex;
+	flex-direction: column;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	justify-content: space-between;
+	border-bottom: solid 2px var(--secondary-color);
+}
+
+.logo {
+	position: relative;
+	bottom: 15px;
+	left: 3%;
+	height: fit-content;
+}
+
+.banLink {
+	padding: 5px 0;
+	display: inline-block;
+	width: 90%;
+}
+
+.search {
+	background-color: #F5F5F5;
+	border-radius: 25px;
+	color: var(--secondary-color);
+	text-align: center;
+	padding: 0 10px;
+	height: fit-content;
+}
+
+.search .form-control {
+	border: none;
+	background-color: #F5F5F5;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 32px;
+	padding: 0;
+	box-shadow: none;
+margin:0 15px;
+}
+
+.search form {
+	padding: 0 10px;
+}
+
+.search .form-control::placeholder {
+	font-size: 32px;
+	color: var(--secondary-color);
+	opacity: 0.6;
+	background-color: #F5F5F5;
+	/* padding-left: 10px; */
+}
+
+.searchSubmit {
+	color:var(--secondary-color);
+	opacity: 0.6;
+	border: none;
+	background-color: #F5F5F5;
+	margin-right: 10px;
+}
+/* .searchSubmit:hover {
+	color: #C2834B;
+} */
+
+#navbarToggleExternalContent {
+	width: fit-content;
+	justify-content: space-between;
+}
+
+.navMenuItem,
+.dropdown-menu,
+.dropdown-item,
+.newsletter {
+	list-style: none;
+	background-color: var(--primary-color);
+	color: #F5F5F5;
+	border-radius: 0;
+}
+
+.dropdown .btn {
+	background-color: transparent;
+	color: #F5F5F5;
+	border: none;
+	font-weight: 800;
+	font-size: 20px;
+	padding: 10px 30px;
+	margin: 0 25px;
+}
+
+.dropdown :hover {
+	background-color: var(--cta-hover-bgcolor);
+	color: #000000;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.navbar-toggler {
+	background-color: #F5F5F5;
+}

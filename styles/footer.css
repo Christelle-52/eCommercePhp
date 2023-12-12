@@ -1,0 +1,75 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#bottom {
+	border: none;
+padding-bottom: 10px;
+}
+
+.containerFooterItems {
+width: 80%;
+}
+
+.footerItem a {
+	display: block;
+	color: var(--text-color);
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.icons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 35px;
+}
+
+.coordonnees {
+	background-image: url(../icons/Steren_France\ 1.svg);
+	background-repeat: no-repeat;
+	background-position: right;
+	display:flex;
+}
+
+.copyright,
+.copyright p {
+	display: block;
+	background-color: var(--primary-color);
+	color: #F5F5F5;
+	text-align: center;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 11px 0;
+}
+.footerIcon {
+	border: solid 1px var(--secondary-color);
+padding: 20px 0;
+}
+
+.cardIcon, .shipIcon {
+	text-align: center;
+}
+.cardIcon img, .shipIcon img {
+margin:20px 33px ;
+}
+
+.newsletter {
+	padding: 8px 0 50px 0;
+	display: inline-block;
+}
+
+#newsletter::placeholder {
+	font-size: 24px;
+	color: var(--primary-color);
+	opacity: 0.6;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 800;
+	background-color: #F5F5F5;
+	padding-left: 10px;
+}
+

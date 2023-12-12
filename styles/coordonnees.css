@@ -1,0 +1,25 @@
+.coord {
+  background-color: var(--primary-color) !important;
+  color: white;
+  height: fit-content;
+}
+.textArea {
+    font-size: 24px;
+  padding: 20px 0;
+
+}
+.coord.row {
+  height: fit-content;
+  overflow-y: scroll;
+}
+
+.coord a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+#map {
+  height: auto;
+}
+

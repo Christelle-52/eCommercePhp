@@ -1,0 +1,83 @@
+ol {
+	list-style: none;
+	display: flex;
+}
+
+.wayLink ol, .wayLink li a {
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 14px;
+	font-style: italic;
+	color: #1f1f1f;
+}
+
+.wayLink li::after {
+  content: "/";
+  color: #1f1f1f;
+  margin: 0 2px;
+}
+
+.wayLink li:last-child::after {
+  content: "";
+}
+
+th {
+ padding: 0.5em;
+}
+
+td:nth-child(odd) {
+  padding: 0.5em;
+}
+
+.textProduct h1, .textProduct p {
+  border-bottom: solid 2px  var(--secondary-color);
+  padding: 10px 0;
+}
+.textProduct h3 {
+  padding: 5px 0 25px 0;
+}
+
+.text {
+  color: var(--secondary-color);
+}
+
+.containerProduct img {
+  width: 100%;
+  margin: 0 15px;
+}
+
+.qty input {
+  display: block;
+}
+
+.price p {
+  border: none;
+  font-size: 32px;
+  color: var(--secondary-color);
+}
+
+.price small {
+  border: none;
+  font-size: 20px;
+  color: #1f1f1f;
+}
+
+.selectSizeQty {
+  border-top: solid 2px  var(--secondary-color);
+}
+
+#myTab .nav-item button {
+  color: #1f1f1f;
+}
+
+.fa-circle-plus, .fa-circle-minus  {
+  color: var(--secondary-color);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+.selectSizeQty #selectSize {
+  width: fit-content !important;
+}

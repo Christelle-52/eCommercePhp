@@ -1,0 +1,51 @@
+.connexion {
+  background-image: url(../images/connexion2.png);
+  display: flex;
+  flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  border: solid 2px var(--secondary-color);
+  margin: 15px auto;
+  align-items: center;
+}
+
+.connexion .formulaire {
+  margin-top: 0;
+  padding-top: 50%;
+
+}
+
+.champsForm input:focus {
+  border: solid 2px var(--cta-hover-bgcolor);
+}
+
+.mdp {
+  position: relative;
+}
+
+.mdp input:focus {
+  border: solid 2px var(--cta-hover-bgcolor);
+}
+
+.mdp .password-icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  display: flex;
+  color: var(--secondary-color);
+  align-items: center;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+  width: 40px;
+}
+
+.password-icon :hover {
+  cursor: pointer;
+  color: var(--cta-hover-bgcolor);
+}
+
+.mdp .password-icon .fa-eye-slash {
+  display: none;
+}
+

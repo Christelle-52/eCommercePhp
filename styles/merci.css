@@ -1,0 +1,46 @@
+.merciNews {
+  background-image: url(../images/merci.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.merciNews em {
+  display: block;
+  font-size: 100px;
+  font-weight: 900;
+  padding: 5% 5% 40% 5%;
+  text-align: center;
+}
+
+.merciNews p {
+  font-size: 50px;
+  font-weight: 900;
+  padding: 10% 5% 5% 5%;
+  text-align: center;
+}
+
+.merciContact {
+  background-image: url(../images/merciContact.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.merciContact em {
+  display: block;
+  font-size: 80px;
+  font-weight: 700;
+  color: white;
+  padding: 5% 5% 40% 5%;
+  text-align: center;
+}
+
+.merciContact p {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+
+  padding: 10% 5% 5% 5%;
+  text-align: center;
+}
