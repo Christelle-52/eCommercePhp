@@ -119,7 +119,7 @@ WHERE p.id= :id");
             </tr>
 
           </table>
-          <form method="POST" action="addcart.php?id_produit=<?= $id ?>">
+          <form method="POST" action="ajoutPanier.php?id_produit=<?= $id ?>">
             <input type="hidden" value="<?= ($_GET['id_produit']) ?>" name="idProduit">
             <div class="row selectSizeQty py-4 justify-content-around me-0 ms-0">
               <div class="col-4">
@@ -233,13 +233,15 @@ WHERE p.id= :id");
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
   <!-- script js -->
+  <script src="script/fonctions.js" type="text/javascript"></script>
+
   <!-- <script src="script/script.js" type="text/javascript"></script> -->
   <script src="script/eye.js" type="text/javascript"></script>
   <!-- <script src="script/formulaire.js" type="text/javascript"></script> -->
   <script src="script/plusMoins.js" type="text/javascript"></script>
   <!-- <script src="script/choix.js" type="text/javascript"></script> -->
   <!-- <script src="script/choixAjax.js" type="text/javascript"></script> -->
-  <script src="script/choixSelect.js" type="text/javascript"></script>
+  <!-- <script src="script/choixSelect.js" type="text/javascript"></script> -->
   <script src="script/images.js" type="text/javascript"></script>
 
 </body>

@@ -10,4 +10,4 @@ unset($_SESSION['userStatut']);
 
 
 header('Location:index.php?deconnexion=success');
-?>
+exit();

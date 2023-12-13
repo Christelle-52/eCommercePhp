@@ -53,3 +53,7 @@ article .product:last-child {
   padding: 0  0  0 10px;
 }
 
+#couponCode {
+  display: none;
+}
+

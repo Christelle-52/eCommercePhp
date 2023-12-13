@@ -50,8 +50,10 @@ if ($article['stock'] >= $quantite) {
   $insertStmt->closeCursor();
   
   header("Location: panier.php?message=validate&id_produit=".$idProduit);
+  exit();
   } else {
     header("Location: panier.php?message=outstock&id_produit=".$idProduit);
+    exit();
   }
 
 ?>

@@ -55,13 +55,13 @@ if (isset($_SESSION['userId'])) {
 			<h2>Votre panier</h2>
 			<div class="container d-flex g-0 w-100 p-0 justify-content-between my-4 cart">
 				<article class="col-lg-7 col-12 mb-2">
-					<?php foreach ($produitPanier as $produit) { 
-						$images = explode(',', $produit['image']) ;
+					<?php foreach ($produitPanier as $produit) {
+						$images = explode(',', $produit['image']);
 						$total += $produit['montant'];
-						?>
+					?>
 
 						<div class="row product mx-0 py-4">
-								<a href="article.php" class="col-2"><img class="col-12" src="<?= $images[0] ?>"></a>
+							<a href="article.php" class="col-2"><img class="col-12" src="<?= $images[0] ?>"></a>
 							<div class="col-xl-10 col-12 textCard ps-4">
 								<span><?= $produit['nom'] ?></span>
 								<div class="row justify-content-between selectSizeQty align-items-center m-auto">
@@ -72,39 +72,39 @@ if (isset($_SESSION['userId'])) {
 										</a>
 									</div>
 									<div class="col-3  py-4 justify-content-around me-0 ms-0">
-									<span class="control-label littleCard">Choix :</span>
-									<span class="control-label littleCard"><?= $produit['taille'] ?></span>
-									<span class="control-label littleCard"></span>
-									
-									<!-- <select class="form-control form-control-select" id="selectSize">
+										<span class="control-label littleCard">Choix :</span>
+										<span class="control-label littleCard"><?= $produit['taille'] ?></span>
+										<span class="control-label littleCard"></span>
+
+										<!-- <select class="form-control form-control-select" id="selectSize">
 										<option value="1" title="S" selected="selected">S</option>
 										<option value="2" title="M">M</option>
 										<option value="3" title="L">L</option>
 										<option value="4" title="XL">XL</option>
 										<option value="5" title="XXL">XXL</option>
 									</select> -->
-								</div>
-								
-								<div class="col-4">
-									<span class="control-label littleCard">Quantité :</span>
-									<span class="control-label littleCard"><?= $produit['quantite'] ?></span>
-									<!-- <div class="qty"> -->
+									</div>
+
+									<div class="col-4">
+										<span class="control-label littleCard">Quantité :</span>
+										<span class="control-label littleCard"><?= $produit['quantite'] ?></span>
+										<!-- <div class="qty"> -->
 										<!-- <div class="input-group">
 											<i class="fas fa-regular fa-circle-minus fa-2xl boutonMoins me-2"></i>
 											<input type="text" name="qty" id="quantity" value="1" class="input-group form-control" min="1"
 												aria-label="Quantité">
 											<i class="fas fa-regular fa-circle-plus fa-2xl boutonPlus ms-2"></i>
 										</div> -->
-									<!-- </div> -->
-								</div>
+										<!-- </div> -->
+									</div>
 
 									<div class="col-4 text-bottom">
-									<div class="price">
-									<span class="control-label littleCard">Total TTC:</span>
+										<div class="price">
+											<span class="control-label littleCard">Total TTC:</span>
 
-										<p class="valueProduct"><?= $produit['montant'] ?> € </p>
+											<p class="valueProduct"><?= $produit['montant'] ?> € </p>
+										</div>
 									</div>
-								</div>
 								</div>
 							</div>
 						</div>
@@ -124,7 +124,7 @@ if (isset($_SESSION['userId'])) {
 					<div class="row shipping g-0 pb-4">
 						<div class="col-9">
 							<h5 class="pb-0">Frais de port </h5>
-							<?php $port = $total<=49 ? 4.99.' €' : 'Offert'; ?>
+							<?php $port = $total <= 49 ? 4.99 . ' €' : 'Offert'; ?>
 							<small class="offerShipping ps-4">(offert dès 49 €)</small>
 						</div>
 						<div class="col-2 d-flex d-block m-auto">
@@ -134,7 +134,11 @@ if (isset($_SESSION['userId'])) {
 					<div class="row reduce g-0">
 						<div class="col mb-4">
 							<h5 class="mb-0 pb-1">Bons de réduction/Remise</h5>
-							<a class="codeReduce ps-4" href="#">Entrez un code coupon </a>
+							<button class="border border-0 bg-transparent codeReduce p-0 m-0 ms-4" onclick="afficherInput()">Entrez un code coupon </button>
+							<form class="text-center m-auto coupon" id="couponCode" method="POST" action="ajoutCoupon.php">
+								<input class="mt-1" type="text" name="couponCode">
+								<input type="submit" value="Valider">
+							</form>
 						</div>
 					</div>
 					<div class="row totalSum g-0 pb-1">
@@ -161,7 +165,6 @@ if (isset($_SESSION['userId'])) {
 
 	<?php include('footer.php'); ?>
 
-
 	<!-- script js bootstrap-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 	<!-- script popper et bundle -->
@@ -169,11 +172,12 @@ if (isset($_SESSION['userId'])) {
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
 	<!-- script js -->
+	<script src="script/fonctions.js" type="text/javascript"></script>
+
 	<!-- <script src="script/script.js" type="text/javascript"></script> -->
 	<!-- <script src="script/eye.js" type="text/javascript"></script> -->
 	<!-- <script src="script/formulaire.js" type="text/javascript"></script> -->
 	<script src="script/plusMoins.js" type="text/javascript"></script>
-	<script src="script/choix.js" type="text/javascript"></script>
 </body>
 
 </html>
