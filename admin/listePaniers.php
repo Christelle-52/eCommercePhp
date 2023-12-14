@@ -56,11 +56,11 @@ $paniers = $stmt->fetchAll();
 	<main>
 		<div class="container text-center my-5">
 			<h2 class="p-0 text-center pb-3 my-4">Liste des paniers</h2>
-			<table class="border m-auto">
+			<table class="m-auto">
 				<thead>
 					<tr>
-						<th class="col-md-2 px-2">Clients</th>
-						<th class="col-md-4 px-2">Produits</th>
+						<th class="col-md-3 px-2">Clients</th>
+						<th class="col-md-3 px-2">Produits</th>
 						<th class="col-md-1 px-2">Quantité</th>
 						<th class="col-md-1 px-2">Taille</th>
 						<th class="col-md-1 px-2">Coupon</th>
@@ -68,15 +68,17 @@ $paniers = $stmt->fetchAll();
 						<th class="col-md-2 px-2">Etat du panier</th>
 					</tr>
 				</thead>
-				<tbody class="text-center">
 					<?php foreach ($paniers as $panier) :
 						$images = explode(',', $panier['image']);
-
 					?>
-						<tr>
-							<th class="col-md-2 px-2"><?= $panier['prenom'] ?> <?= $panier['cl_nom'] ?> Commande passée le <?= $panier['dateCreation'] ?></th>
-							<td class="col-md-4 px-2">
-								<div class="row justify-content-between align-items-center">
+				<tbody class="text-center">
+					<tr >
+							<th class="col-md-3 text-center m-0">
+								<p class="py-0"><?= $panier['prenom'] ?> <?= $panier['cl_nom'] ?></p>
+								<p class="py-0"> Commande passée le :</p>
+								<p class="py-0"> <?= $panier['dateCreation'] ?></p></th>
+							<td class="col-md-3 px-2">
+								<div class="row justify-content-center align-items-center">
 									<img class="col-md-2" src="../<?= $images[0] ?>">
 									<div class="col-md-9">
 										<?= $panier['nom'] ?>
@@ -101,12 +103,12 @@ $paniers = $stmt->fetchAll();
 										<button class="ctaSmall"><a href="etapPrec.php?id=<?= $panier['id_panier'] ?>"><i class="fa-solid fa-chevron-left fa-sm" style="color: #ffffff;"></i></a></button>
 										<button class="ctaSmall"><a href="etapSuiv.php?id=<?= $panier['id_panier'] ?>"><i class="fa-solid fa-chevron-right fa-sm" style="color: #ffffff;"></i></a></button>
 									</div>
-								<?php endif; ?>
-							</td>
-						</tr>
-					<?php endforeach; ?>
-				</tbody>
-			</table>
+									<?php endif; ?>
+								</td>
+							</tr>
+						</tbody>
+						<?php endforeach; ?>
+					</table>
 
 
 		</div>

@@ -57,7 +57,7 @@ $clients = $stmt->fetchAll();
 				<?php foreach ($clients as $client) { ?>
 					<div class="col-6 col-md-3 card-group gy-3">
 						<div class="card bg-warning-subtle justify-content-center m-auto">
-							<div class="avatar mt-4">
+							<div class="avatar mt-4 m-auto">
 								<img src="../<?= $client['avatar'] ?>" alt="avatar">
 							</div>
 							<div class="card-body ">
