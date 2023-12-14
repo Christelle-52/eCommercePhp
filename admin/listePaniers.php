@@ -1,10 +1,17 @@
 <?php
 session_start();
 include('../pdo.php');
+
 if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	header('Refresh: 3;../index.php?erreur=accesRefuse');
 	exit();
 };
+
+$stmt = $pdo->prepare('SELECT pa.id AS id_panier, pa.quantite AS qte, pa.*, p.nom, p.image, cl.nom AS cl_nom, cl.prenom FROM paniers pa 
+INNER JOIN produits p ON pa.id_produit=p.id
+INNER JOIN clients cl ON pa.id_client=cl.id');
+$stmt->execute();
+$paniers = $stmt->fetchAll();
 
 ?>
 
@@ -39,7 +46,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-	<title>ZenDog - Page Administrateur</title>
+	<title>Page Administrateur - Liste des paniers</title>
 
 </head>
 
@@ -47,32 +54,59 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<?php include('header.php'); ?>
 
 	<main>
-		<section class="container my-5">
-			<h2 class="p-0 text-center pb-3 my-4">Page administrateur</h2>
-			<div class="container p-0 my-5 admin">
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4">
-						<a href="listeClients.php">Clients</a>
-					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listePaniers.php">Paniers</a>
-					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listeProduits.php">Produits</a>
-					</div>
-				</div>
-				<div class="row text-center my-1">
-					<div class="col-12 py-4 " id="admin">
-						<a href="listeCoupons.php">Coupons</a>
-					</div>
-				</div>
-				
-			</div>
-		</section>
+		<div class="container text-center my-5">
+			<h2 class="p-0 text-center pb-3 my-4">Liste des paniers</h2>
+			<table class="border m-auto">
+				<thead>
+					<tr>
+						<th class="col-md-2 px-2">Clients</th>
+						<th class="col-md-4 px-2">Produits</th>
+						<th class="col-md-1 px-2">Quantité</th>
+						<th class="col-md-1 px-2">Taille</th>
+						<th class="col-md-1 px-2">Coupon</th>
+						<th class="col-md-1 px-2">Total</th>
+						<th class="col-md-2 px-2">Etat du panier</th>
+					</tr>
+				</thead>
+				<tbody class="text-center">
+					<?php foreach ($paniers as $panier) : ?>
+						<tr>
+							<th class="col-md-2 px-2"><?= $panier['prenom'] ?> <?= $panier['cl_nom'] ?> Commande passée le <?= $panier['dateCreation'] ?></th>
+							<td class="col-md-4 px-2">
+								<div class="row justify-content-between align-items-center">
+										<img class="col-md-2" src="../<?= $panier['image'] ?>">
+									<div class="col-md-9">
+										<?= $panier['nom'] ?>
+									</div>
+								</div>
+							</td>
+							<td class="col-md-1 px-2"><?= $panier['qte'] ?></td>
+							<td class="col-md-1 px-2"><?= $panier['taille'] ?></td>
+
+							<?php
+							if (!empty($panier['couponVal'])) { ?>
+								<td class="col-md-1 px-2"><?= $panier['couponVal'] ?></td>
+							<?php } else { ?>
+								<td class="col-md-1 px-2">NON</td>
+							<?php } ?>
+
+							<td class="col-md-1 px-2"><?= $panier['montant'] ?></td>
+							<td class="col-md-2 px-2">
+								<small><?= $panier['statut'] ?></small>
+								<?php if ($panier['statut'] != "Terminé") : ?>
+									<div>
+										<button class="ctaSmall"><a href="etapPrec.php?id=<?= $panier['id_panier'] ?>"><i class="fa-solid fa-chevron-left fa-sm" style="color: #ffffff;"></i></a></button>
+										<button class="ctaSmall"><a href="etapSuiv.php?id=<?= $panier['id_panier'] ?>"><i class="fa-solid fa-chevron-right fa-sm" style="color: #ffffff;"></i></a></button>
+									</div>
+								<?php endif; ?>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+				</tbody>
+			</table>
+
+
+		</div>
 	</main>
 
 	<?php include('footer.php'); ?>
@@ -82,7 +116,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<!-- script popper et bundle -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-	
+
 	<!-- script js -->
 	<script src="Script/plusMoins.js" type="text/javascript"></script>
 	<!-- <script src="script/script.js" type="text/javascript"></script> -->

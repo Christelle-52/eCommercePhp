@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../pdo.php');
+
 if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	header('Refresh: 3;../index.php?erreur=accesRefuse');
 	exit();
@@ -39,7 +40,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-	<title>ZenDog - Page Administrateur</title>
+	<title>Page Administrateur - Coupons - Ajouter</title>
 
 </head>
 
@@ -47,32 +48,26 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<?php include('header.php'); ?>
 
 	<main>
-		<section class="container my-5">
-			<h2 class="p-0 text-center pb-3 my-4">Page administrateur</h2>
-			<div class="container p-0 my-5 admin">
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4">
-						<a href="listeClients.php">Clients</a>
+		<div class="container text-center my-5">
+			<h2 class="p-0 text-center pb-3 my-4">Ajouter un coupon</h2>
+
+			<div class="container text-center my-5 w-50 formAdmin">
+				<form class="m-auto" action='ajouterCoReq.php' method='POST'>
+					<label class="my-3"><strong>CODE</strong></label><br>
+					<input class="col-12 w-50 ps-3" type="text" name="code"><br><br>
+					<label class="my-3"><strong>REMISE</strong></label><br>
+					<div class="row w-50 text-center m-auto mb-4">
+						<input class="col-10 ps-3" type="text" name="remise">
+						<input class="col-2 ps-3" type="text" name="type">
 					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listePaniers.php">Paniers</a>
-					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listeProduits.php">Produits</a>
-					</div>
-				</div>
-				<div class="row text-center my-1">
-					<div class="col-12 py-4 " id="admin">
-						<a href="listeCoupons.php">Coupons</a>
-					</div>
-				</div>
-				
+					<label class="my-2"><strong>DEBUT</strong></label><br>
+					<input class="w-50 ps-3" type="date" name="dateDebut"><br><br>
+					<label class="my-2"><strong>FIN</strong></label><br>
+					<input class="w-50 ps-3" type="date" name="dateFin"> <br><br>
+					<input class="ctaSmall my-4" type="submit" value="Ajouter le coupon">
+				</form>
+
 			</div>
-		</section>
 	</main>
 
 	<?php include('footer.php'); ?>
@@ -82,7 +77,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<!-- script popper et bundle -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-	
+
 	<!-- script js -->
 	<script src="Script/plusMoins.js" type="text/javascript"></script>
 	<!-- <script src="script/script.js" type="text/javascript"></script> -->

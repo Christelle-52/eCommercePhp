@@ -1,11 +1,15 @@
 <?php
 session_start();
 include('../pdo.php');
+
 if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	header('Refresh: 3;../index.php?erreur=accesRefuse');
 	exit();
 };
 
+$stmt = $pdo->prepare('SELECT * FROM clients');
+$stmt->execute();
+$clients = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +43,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-	<title>ZenDog - Page Administrateur</title>
+	<title>Page Administrateur - liste des clients</title>
 
 </head>
 
@@ -47,32 +51,32 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<?php include('header.php'); ?>
 
 	<main>
-		<section class="container my-5">
-			<h2 class="p-0 text-center pb-3 my-4">Page administrateur</h2>
-			<div class="container p-0 my-5 admin">
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4">
-						<a href="listeClients.php">Clients</a>
+		<div class="container text-center my-5">
+			<h2 class="p-0 text-center pb-3 my-4">Liste des clients</h2>
+			<div class="row justify-content-center m-auto">
+				<?php foreach ($clients as $client) { ?>
+					<div class="col-6 col-md-3 card-group gy-3">
+						<div class="card bg-warning-subtle justify-content-center m-auto">
+							<div class="avatar mt-4">
+								<img src="../<?= $client['avatar'] ?>" alt="avatar">
+							</div>
+							<div class="card-body ">
+								<h5 class="card-title text-center"><?= $client['prenom'] ?> <?= $client['nom'] ?></h5>
+								<p class="card-text"><?= $client['email'] ?></p>
+								<p class="card-text">Inscrit depuis le <?= $client['dateInscription'] ?> </p>
+							</div>
+							<div class="card-footer bg-warning-subtle my-3" id="page">
+								<p class="card-text"><?= $client['statut'] ?> </p>
+								<a class="ctaSmall" href="changerStatut.php?idClient=<?= $client['id'] ?>">
+									<span>Changer le statut</span>
+								</a>
+							</div>
+
+						</div>
 					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listePaniers.php">Paniers</a>
-					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listeProduits.php">Produits</a>
-					</div>
-				</div>
-				<div class="row text-center my-1">
-					<div class="col-12 py-4 " id="admin">
-						<a href="listeCoupons.php">Coupons</a>
-					</div>
-				</div>
-				
+				<?php } ?>
 			</div>
-		</section>
+		</div>
 	</main>
 
 	<?php include('footer.php'); ?>
@@ -82,7 +86,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<!-- script popper et bundle -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-	
+
 	<!-- script js -->
 	<script src="Script/plusMoins.js" type="text/javascript"></script>
 	<!-- <script src="script/script.js" type="text/javascript"></script> -->

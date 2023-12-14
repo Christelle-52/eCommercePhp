@@ -1,11 +1,15 @@
 <?php
 session_start();
 include('../pdo.php');
+
 if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	header('Refresh: 3;../index.php?erreur=accesRefuse');
 	exit();
 };
 
+$stmt = $pdo->prepare('SELECT * FROM coupons');
+$stmt->execute();
+$coupons = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +43,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-	<title>ZenDog - Page Administrateur</title>
+	<title>Page Administrateur - liste des coupons</title>
 
 </head>
 
@@ -47,32 +51,44 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<?php include('header.php'); ?>
 
 	<main>
-		<section class="container my-5">
-			<h2 class="p-0 text-center pb-3 my-4">Page administrateur</h2>
-			<div class="container p-0 my-5 admin">
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4">
-						<a href="listeClients.php">Clients</a>
+		<div class="container text-center my-5">
+		<h2 class="p-0 text-center pb-3 my-4">Liste des coupons</h2>
+		<div class="text-center">
+      <a href="ajouterCoupon.php">
+        <button type="button" class="ctaSmall fs-3 my-3">Ajouter un coupon</button>
+      </a>
+    </div>
+			<div class="row justify-content-center m-auto">
+				<?php foreach ($coupons as $coupon) { ?>
+					<div class="col-6 col-md-3 card-group gy-3">
+						<div class="card bg-warning-subtle">
+							<div class="card-body ">
+								<h5 class="card-title text-center"><?= $coupon['code'] ?></h5>
+								<p class="card-text"><?= $coupon['remise'] ?> <?= $coupon['type'] ?></p>
+								<p class="card-text"> Du <?= $coupon['dateDebut'] ?> au <?= $coupon['dateFin'] ?></p>
+
+							</div>
+							<div class="card-footer bg-warning-subtle" id="page">
+								<div class="row justify-content-between my-2 align-items-center m-auto w-75">
+									<a class="col-4" href="supprimerCoReq.php?id=<?= $coupon['id'] ?>" onclick="return confirm('Etes-vous sûr de vouloir supprimer ce coupon ?')">
+										<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 14 14">
+											<path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M1 3.5h12m-10.5 0h9v9a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-9h0Zm2 0V3a2.5 2.5 0 0 1 5 0v.5m-4 2V11m3-5.5V11" />
+										</svg>
+									</a>
+									<a class="ctaSmall" href="modifierCoupon.php?idCoupon=<?= $coupon['id'] ?>">
+										<span>Modifier</span>
+									</a>
+								</div>
+
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listePaniers.php">Paniers</a>
-					</div>
-				</div>
-				<div class="row text-center my-1" id="admin">
-					<div class="col-12 py-4 ">
-						<a href="listeProduits.php">Produits</a>
-					</div>
-				</div>
-				<div class="row text-center my-1">
-					<div class="col-12 py-4 " id="admin">
-						<a href="listeCoupons.php">Coupons</a>
-					</div>
-				</div>
-				
+				<?php } ?>
 			</div>
-		</section>
+		</div>
+
+		</div>
+
 	</main>
 
 	<?php include('footer.php'); ?>
@@ -82,7 +98,7 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	<!-- script popper et bundle -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-	
+
 	<!-- script js -->
 	<script src="Script/plusMoins.js" type="text/javascript"></script>
 	<!-- <script src="script/script.js" type="text/javascript"></script> -->
