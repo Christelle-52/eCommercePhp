@@ -69,12 +69,15 @@ $paniers = $stmt->fetchAll();
 					</tr>
 				</thead>
 				<tbody class="text-center">
-					<?php foreach ($paniers as $panier) : ?>
+					<?php foreach ($paniers as $panier) :
+						$images = explode(',', $panier['image']);
+
+					?>
 						<tr>
 							<th class="col-md-2 px-2"><?= $panier['prenom'] ?> <?= $panier['cl_nom'] ?> Commande passée le <?= $panier['dateCreation'] ?></th>
 							<td class="col-md-4 px-2">
 								<div class="row justify-content-between align-items-center">
-										<img class="col-md-2" src="../<?= $panier['image'] ?>">
+									<img class="col-md-2" src="../<?= $images[0] ?>">
 									<div class="col-md-9">
 										<?= $panier['nom'] ?>
 									</div>
@@ -101,7 +104,7 @@ $paniers = $stmt->fetchAll();
 								<?php endif; ?>
 							</td>
 						</tr>
-						<?php endforeach; ?>
+					<?php endforeach; ?>
 				</tbody>
 			</table>
 
