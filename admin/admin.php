@@ -70,6 +70,13 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 						<a href="listeCoupons.php">Coupons</a>
 					</div>
 				</div>
+				<div class="row text-center justify-content-between my-1">
+					<div class="col py-4 me-1" id="admin">
+						<a href="listeCat.php">Catégories / Sous catégories</a>
+					</div>
+
+				</div>
+
 				
 			</div>
 		</section>

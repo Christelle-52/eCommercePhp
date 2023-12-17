@@ -7,12 +7,6 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	exit();
 };
 
-$stmt = $pdo->prepare('SELECT pa.id AS id_panier, pa.quantite AS qte, pa.*, p.nom, p.image, cl.nom AS cl_nom, cl.prenom FROM paniers pa 
-INNER JOIN produits p ON pa.id_produit=p.id
-INNER JOIN clients cl ON pa.id_client=cl.id');
-$stmt->execute();
-$paniers = $stmt->fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +38,9 @@ $paniers = $stmt->fetchAll();
 	<link rel="stylesheet" href="../styles/categories.css">
 	<link rel="stylesheet" href="../styles/admin.css">
 
-	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://Nom.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-	<title>Page Administrateur - Liste des paniers</title>
+	<title>Page Administrateur - Catégories - Ajouter</title>
 
 </head>
 
@@ -55,64 +49,18 @@ $paniers = $stmt->fetchAll();
 
 	<main>
 		<div class="container text-center my-5">
-			<h2 class="p-0 text-center pb-3 my-4">Liste des paniers</h2>
-			<table class="m-auto">
-				<thead>
-					<tr>
-						<th class="col-md-3 px-2">Clients</th>
-						<th class="col-md-3 px-2">Produits</th>
-						<th class="col-md-1 px-2">Quantité</th>
-						<th class="col-md-1 px-2">Taille</th>
-						<th class="col-md-1 px-2">Coupon</th>
-						<th class="col-md-1 px-2">Total</th>
-						<th class="col-md-2 px-2">Etat du panier</th>
-					</tr>
-				</thead>
-					<?php foreach ($paniers as $panier) :
-						$images = explode(',', $panier['image']);
-					?>
-				<tbody class="text-center">
-					<tr >
-							<td class="col-md-3 text-center m-0">
-								<p class="py-0"><?= $panier['prenom'] ?> <?= $panier['cl_nom'] ?></p>
-								<p class="py-0"> Commande passée le :</p>
-								<p class="py-0"> <?= $panier['dateCreation'] ?></p>
-							</td>
-							<td class="col-md-3 px-2">
-								<div class="row justify-content-center align-items-center">
-									<img class="col-md-2" src="../<?= $images[0] ?>">
-									<div class="col-md-9">
-										<?= $panier['nom'] ?>
-									</div>
-								</div>
-							</td>
-							<td class="col-md-1 px-2"><?= $panier['qte'] ?></td>
-							<td class="col-md-1 px-2"><?= $panier['taille'] ?></td>
+			<h2 class="p-0 text-center pb-3 my-4">Ajouter une catégorie</h2>
 
-							<?php
-							if (!empty($panier['couponVal'])) { ?>
-								<td class="col-md-1 px-2"><?= $panier['couponVal'] ?></td>
-							<?php } else { ?>
-								<td class="col-md-1 px-2">NON</td>
-							<?php } ?>
+			<div class="container text-center my-5 w-50 formAdmin">
+				<form class="m-auto" action='ajouterCatReq.php' method='POST'>
+					<label class="my-3"><strong>Nom</strong></label><br>
+					<input class="col-10 ps-3" type="text" name="nom" value=""><br><br>
+					<label class="my-3"><strong>Description</strong></label><br>
+						<textarea class="col-10 ps-3" type="text" name="descript" rows="10" value=""></textarea>
+					<input class="ctaSmall my-4" type="submit" value="Ajouter la catégorie">
+				</form>
 
-							<td class="col-md-1 px-2"><?= $panier['montant'] ?></td>
-							<td class="col-md-2 px-2">
-								<small><?= $panier['statut'] ?></small>
-								<?php if ($panier['statut'] != "Terminé") : ?>
-									<div>
-										<button class="ctaSmall"><a href="etapPrec.php?id=<?= $panier['id_panier'] ?>"><i class="fa-solid fa-chevron-left fa-sm" style="color: #ffffff;"></i></a></button>
-										<button class="ctaSmall"><a href="etapSuiv.php?id=<?= $panier['id_panier'] ?>"><i class="fa-solid fa-chevron-right fa-sm" style="color: #ffffff;"></i></a></button>
-									</div>
-									<?php endif; ?>
-								</td>
-							</tr>
-						</tbody>
-						<?php endforeach; ?>
-					</table>
-
-
-		</div>
+			</div>
 	</main>
 
 	<?php include('footer.php'); ?>

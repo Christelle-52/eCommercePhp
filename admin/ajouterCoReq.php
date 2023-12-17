@@ -7,20 +7,23 @@ if (!isset($_SESSION['userStatut']) || $_SESSION['userStatut'] != "admin") {
 	exit();
 };
 
-$req = $pdo->prepare("INSERT INTO coupons (code, remise, type, dateDebut, dateFin)
-VALUES (:code, :remise, :type, :dateDebut, :dateFin)",
-array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+$req = $pdo->prepare(
+	"INSERT INTO coupons (code, remise, type, dateDebut, dateFin)
+	VALUES (:code, :remise, :type, :dateDebut, :dateFin)",
+	array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY)
+);
 
 $req->execute(
-    array(
-        ':code'=>$_POST['code'],
-        ':remise'=>$_POST['remise'],
-        ':type'=>$_POST['type'],
-        ':dateDebut'=>$_POST['dateDebut'],
-				':dateFin'=>$_POST['dateFin'])
+	array(
+		':code' => $_POST['code'],
+		':remise' => $_POST['remise'],
+		':type' => $_POST['type'],
+		':dateDebut' => $_POST['dateDebut'],
+		':dateFin' => $_POST['dateFin']
+	)
 );
 
 $req->closeCursor();
 
-header('Location:admin.php?ajout=reussi');
+header('Location:listeCoupons.php?ajout=reussi');
 exit();

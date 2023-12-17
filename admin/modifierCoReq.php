@@ -23,7 +23,7 @@ if(isset($_POST["idCoupon"])){
   $stmt->execute();
   $stmt->closeCursor();
 
-  header("Location:admin.php?modification=reussie");
+  header("Location:listeCoupons.php?modification=reussie");
   exit();
 }
 echo "Vous n'avez pas de coupon sélectionné !";
