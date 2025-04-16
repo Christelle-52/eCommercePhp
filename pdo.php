@@ -1,8 +1,8 @@
 <?php
 
 $dbh = "mysql:host=private.localhost;dbname=ECF2";
-$user = 'AdminPOPOS';
-$pass = 'Mq*sL--52Dpt';
+$user = 'XXX';
+$pass = 'XXX';
 
 try {
 	// On se connecte à MySQL
