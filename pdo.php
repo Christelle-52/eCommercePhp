@@ -1,6 +1,6 @@
 <?php
 
-$dbh = "mysql:host=private.localhost;dbname=ECF2";
+$dbh = "mysql:host=localhost;dbname=ECF2";
 $user = 'XXX';
 $pass = 'XXX';
 
